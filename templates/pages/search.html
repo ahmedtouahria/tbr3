@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% include 'partes/navbare.html' %}
+{% block content %}
+{% load static %}
+<section class=" py-5 ">
+    <div class="container">
+      <h1 class='text-center text-danger py-4 fw-bold'>بحث عن متبرع </h1>
+      <div class="searchGroup">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control mb-4 search" id="search" placeholder="بحث عن اسم بلدية او الولاية .." aria-label="Example text with button addon" aria-describedby="button-addon1">
+        
+      </div>
+      <ul class="list-group" id="result"></ul>
+      </div>
+      {% include 'partes/setWilaya.html' %}
+      
+    </div>
+  </section>
+  <section class=" py-2 " >
+    <div class="container" id="container">
+
+      <div class="row py-2 boxs" id="card-list">
+        <img src='https://www.pngarts.com/files/11/Avatar-Transparent-Images.png' id="img-no-found" class=" w-25 mx-auto img-no-found " >
+        {% for r in page.object_list %}
+        <div class="col-md-6 col-lg-4  ">
+          <div class="card border-danger mb-3" >
+            <div class="card-header"> 
+              <h4 class="mx-4" id="def">{{r.name}}</h4> 
+    
+              <img src="{% static './img/avatr.png' %}" id="avatr"></div>
+            <div class="card-body">
+              <div class="d-flex justify-content-evenly flex-row-reverse
+              align-self-center"><p class="fw-bold  pt-1 w-50 adrs  "> {{r.commun}} {{r.wilaya}} </p><i class="bi bi-geo-alt-fill  w-50  text-secondary fs-4 mx-auto"></i></div>
+              <div class="d-flex justify-content-evenly flex-row-reverse align-self-center"><p class="fw-bold  pt-1 w-50 zomra "> {{r.zomra}}</p><i class="bi bi-droplet-half text-danger w-50  fs-4 mx-auto"></i></div>
+              <div class="d-flex justify-content-evenly flex-row-reverse align-self-center"><p class="fw-bold  pt-1 w-50    "> {{r.phone}} </p><i class="bi bi-telephone-fill text-success  w-50  fs-4 mx-auto"></i></div>
+  
+            </div>
+            <div class="card-footer d-flex justify-content-evenlyalign-content-center justify-content-between text-muted">
+              <p style="margin-block: 1%;"> {{r.whenpublished}} </p>
+              <div class="d-grid gap-2">
+                <a type="button" href="tel:{{r.phone}}" class="btn btn-success text-light text-decoration-none"> إتصال  <i class="bi bi-telephone-outbound-fill px-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <nav aria-label="Page navigation example" class="mx-auto paginationContainer my-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              {% if page.has_previous %}
+              <a class="page-link text-danger" href="{% url 'search' %}?page={{page.previous_page_number}}" aria-label="Previous">
+                <span aria-hidden="true"> &laquo; السابق </span>
+              </a>
+              {% endif %}
+            </li>
+            <li class="page-item"><a class="page-link text-danger" href="{% url 'search' %}?page=1">1</a></li>
+            <li class="page-item"><a class="page-link text-danger" href="{% url 'search' %}?page=2">2</a></li>
+            <li class="page-item"><a class="page-link text-danger" href="{% url 'search' %}?page=3">3</a></li>
+            <li class="page-item">
+              {% if page.has_next %}
+              <a class="page-link text-danger" href="{% url 'search' %}?page={{page.next_page_number}}" aria-label="Next">
+                <span aria-hidden="true">التالي &raquo; </span>
+              </a>
+              {% endif %}
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="row py-2 boxsOut" id="card-list-output">
+       
+     
+      </div>
+
+ </div>
+    
+
+  </section>
+  
+  
+  {% endblock %}
+ 
