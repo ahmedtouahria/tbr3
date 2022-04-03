@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<section class=" py-5 text-center text-md-end" id="landing">
+    <div class="container">
+      <div class="d-flex">
+        <div class="text">
+          <h1 class="text-danger">منصة تبرع</h1>
+          <p class="opacity-75 py-3">
+            منصة تبرع هي منصة تساعد المرضى او المحتاجين للدم لإقتنائه بسهولة
+            في أي وقت
+          </p>
+          <a href="{% url 'search' %}" class="btn btn-danger m-2 text-light">
+            بحث عن متبرعين <i class="bi bi-search px-2"></i>
+          </a>
+          <a href="{% url 'create' %}" class="btn btn-outline-danger m-2">
+            إنشاء إعلان تبرع <i class="bi bi-box-arrow-in-up px-2"></i>
+          </a>
+        </div>
+        <img
+          src="{% static './img/img.svg' %}"
+          class="img-fluid w-50 d-none d-md-block"
+          alt=""
+        />
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- services -->
+  <section class=" py-5 text-center text-md-end">
+    <div class="container">
+      <h1 class="text-center text-danger py-5 fw-bold">خدمات المنصة</h1>
+      <div #swiperRef="" class="swiper mySwiper  d-md-none">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"> 
+            <div class="col-sm">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">بحث عن متبرع</h5>
+              <p class="card-text py-3 opacity-75">
+                يمكنك البحث عن متبرعين مناسبين من خلال فلترة البحث حسب الزمرة
+                والمكان ...
+              </p>
+              <a href="#" class="btn btn-outline-danger">مزيد من المعلومات</a>
+            </div>
+          </div>
+        </div></div>
+          <div class="swiper-slide"> 
+            <div class="col-sm">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold"> إعلان تبرع </h5>
+              <p class="card-text py-3 opacity-75">
+                يمكنك وضع إعلان تبرع بالدم مع تحديد مكانك وزمرة دمك 
+              </p>
+              <a href="#" class="btn btn-outline-danger">مزيد من المعلومات</a>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class="swiper-slide">
+             <div class="col-sm">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">بحث عن متبرع</h5>
+              <p class="card-text py-3 opacity-75">
+                يمكنك البحث عن متبرعين مناسبين من خلال فلترة البحث حسب الزمرة
+                والمكان ...
+              </p>
+              <a href="#" class="btn btn-outline-danger">مزيد من المعلومات</a>
+            </div>
+          </div>
+        </div></div>
+       
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="row text-center d-none d-md-flex">
+        <div class="col-sm">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">بحث عن متبرع</h5>
+              <p class="card-text py-3 opacity-75">
+                يمكنك البحث عن متبرعين مناسبين من خلال فلترة البحث حسب الزمرة
+                والمكان ...
+              </p>
+              <a href="#" class="btn btn-outline-danger">مزيد من المعلومات</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">بحث عن متبرع</h5>
+              <p class="card-text py-3 opacity-75">
+                يمكنك البحث عن متبرعين مناسبين من خلال فلترة البحث حسب الزمرة
+                والمكان ...
+              </p>
+              <a href="#" class="btn btn-outline-danger">مزيد من المعلومات</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold">بحث عن متبرع</h5>
+              <p class="card-text py-3 opacity-75">
+                يمكنك البحث عن متبرعين مناسبين من خلال فلترة البحث حسب الزمرة
+                والمكان ...
+              </p>
+              <a href="#" class="btn btn-outline-danger">مزيد من المعلومات</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- contact -->
+  <section class="bg-danger text-light py-5 text-center text-md-end">
+    <div class="container">
+      <h1 class="text-center pb-4 fw-bold">تواصل معنا</h1>
+      <div class="row">
+        <div class="col-sm py-3">
+          <div class="d-flex justify-content-start">
+            <p class="w-50">055344484</p>
+            <i class="bi bi-telephone-fill px-4 w-50"></i>
+          </div>
+          <div class="d-flex justify-content-center">
+            <p class="w-50">tabare3-dz@gmail.com</p>
+            <i class="bi bi-envelope-fill px-4 w-50"></i>
+          </div>
+          <div class="d-flex justify-content-center">
+            <p class="w-50">عين أزال سطيف</p>
+            <i class="bi bi-geo-alt-fill px-4 w-50"></i>
+          </div>
+        </div>
+        <div class="col-sm py-3 guid" id="guid">
+          <div class="d-flex py-2 justify-content-start" >
+            <a href="#" class="w-50 text-light ">الأحكـام والإرشادات</a>
+            <i class="bi bi-info-square-fill px-4 w-50"></i>
+          </div>
+          <div class="d-flex py-2 justify-content-center ">
+            <a href="#" class="w-50 text-light ">بنود الخدمة</a>
+            <i class="bi bi-align-start px-4 w-50"></i>
+          </div>
+          <div class="d-flex py-2 justify-content-center ">
+            <a href="#" class="w-50 text-light ">  منتدى الجمعيات الخيرية</a>
+            <i class="bi bi-building px-4 w-50"></i>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="mb-3" id="e-mail">
+            <label for="exampleFormControlInput1" class="form-label">البريد الالكتروني</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">الرسالة </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <div class="btn btn-light text-danger"> إرسال</div>
+          </div>
+        </div>
+        <!--  -->
+      </div>
+
+
+      <div class="row mt-5">
+        <div class="col-sm d-flex">
+          <div class="rs mx-auto" width="100%">  
+            <a class="bi bi-facebook text-decoration-none text-light  fs-5" href="#"></a>
+          <a class="bi bi-instagram text-decoration-none text-light fs-5 px-3" href="#"></a>
+          <a class="bi bi-twitter text-decoration-none text-light fs-5" href="#"></a>
+        </div>
+        </div>
+      </div>
+    <p class="mx-auto text-center mt-5">Developed BY  <strong>_A_Amine_Touahria</strong>  all rights reserved &copy; 2022</p>
+
+    </div>
+
+  </section>
+  {% endblock %}

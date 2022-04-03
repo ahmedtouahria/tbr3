@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<section id="l" class=" py-5">
+  <div class="container">
+    <h1 class="text-center text-danger">إنشاء إعلان تبرع بالدم</h1>
+    <form method="post" class="w-lg-50" id="form_create">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">الإسـم</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="الاسم "
+          name="username"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >رقم الهاتف</label
+        >
+        <input
+         name='phone'
+          type="tel"
+          id="UserMobile"
+          maxlength="10"
+          minlength="10"
+          data-fv-numeric="true"
+          data-fv-numeric-message="Please enter valid phone numbers"
+          data-fv-phone-country11="IN"
+          required="required"
+          data-fv-notempty-message="This field cannot be left blank."
+          placeholder="213+"
+          class="form-control"
+          data-fv-field="data[User][mobile]"
+        />
+      </div>
+      {% include 'partes/setWilaya.html' %}
+      <div class="input-group mb-3">
+        <div class="g-recaptcha" data-sitekey="6LeCUtwdAAAAAGBKGF15Zd-j4qHWJGmeI3BexejG
+        "></div>
+        <br/>
+      </div>
+    {% include 'partes/messages.html' %}
+      <button class="btn btn-success px-5 mt-4" type="submit">
+        إنشاء <i class="bi bi-box-arrow-in-up px-2"></i>
+      </button>
+  
+    </form>
+  </div>
+</section>
+{% endblock %}
